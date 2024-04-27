@@ -10,7 +10,7 @@ class CustomUser(AbstractUser):
         ('guest', 'Guest'),
     )
     role = models.CharField(max_length=10, choices=USER_ROLES, default='guest')
-    customUseraddress = models.CharField(max_length=255, blank=True, null=True)
+    address = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return self.email  # You might want to adjust this based on your requirements
@@ -20,14 +20,14 @@ class Cart(models.Model):
     product = models.ForeignKey('shop.Product', on_delete=models.CASCADE, related_name='carts')
     quantity = models.IntegerField()
     created_date = models.DateTimeField(auto_now_add=True)
-    cartAddress = models.CharField(max_length=255, blank=True, null=True)
+    address = models.CharField(max_length=255, blank=True, null=True)
     def __str__(self):
         return f'{self.product}, {self.quantity}, {self.created_date}'
 
 
 class Customer(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True)
-    customerAddress = models.TextField(blank=True, null=True)
+    address = models.TextField(blank=True, null=True)
     created_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

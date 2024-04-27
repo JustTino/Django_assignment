@@ -14,7 +14,6 @@
 <h1 class="text-center mb-4">All Products </h1>
 <p class="text-right">{{ deleted }} </p>
 <div class="container">
-    <p class="text-right mb-4"><a class="btn btn-primary" href="{% url 'shop:product_new' %}">Enter new product</a></p>
     <div class="row">
         {% for product in products %}
         <div class="grid">

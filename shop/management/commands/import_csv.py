@@ -7,7 +7,7 @@ class Command(BaseCommand):
     help = 'Import data from a CSV file to the Product model'
 
     def handle(self, *args, **kwargs):
-        csv_file = 'data/data_1.csv'  
+        csv_file = 'data/data_file.csv'  
         with open(csv_file, 'r') as f:
             reader = csv.DictReader(f, delimiter=",")
             for row in reader:

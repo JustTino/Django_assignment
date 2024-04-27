@@ -91,3 +91,15 @@ def login_view(request):
         return redirect('product_list')
     else:
         return redirect('login')
+
+@login_required
+def payment_success(request):
+    user_id = request.user.id
+    customer = get_object_or_404(Customer, user_id=user_id)
+    order = Order.objects.filter(customer=customer).last()
+    if not order:
+        raise Http404("No orders found")
+    order_items = LineItem.objects.filter(order=order)
+    total_amount = sum(item.product.price * item.quantity for item in order_items)
+    delivery_address = customer.address
+    return render(request, 'shop/payment_success.html', {'order_items': order_items, 'total_amount': total_amount, 'delivery_address': delivery_address})
