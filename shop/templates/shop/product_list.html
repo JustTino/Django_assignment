@@ -1,0 +1,38 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% block styles %}
+<head>
+  <title>Product List</title>
+  <link rel="stylesheet" href="{% static 'products_styles.css' %}">
+</head>
+
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center mb-4">All Products </h1>
+<p class="text-right">{{ deleted }} </p>
+<div class="container">
+    <p class="text-right mb-4"><a class="btn btn-primary" href="{% url 'shop:product_new' %}">Enter new product</a></p>
+    <div class="row">
+        {% for product in products %}
+        <div class="grid">
+            <div class="card h-100">
+                <a href="{% url 'shop:product_detail' id=product.id %}">
+                    <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+                </a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="{% url 'shop:product_detail' id=product.id %}">{{ product.brand }} {{ product.model }}</a>
+                    </h4>
+                    <h5 class="card-price">${{ product.price }}</h5>
+                    <p class="card-text">This is product {{ product.id }} which was added on: {{ product.created_date }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+</html>

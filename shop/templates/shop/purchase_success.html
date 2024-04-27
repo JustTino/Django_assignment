@@ -1,0 +1,17 @@
+{% extends 'shop/base.html' %}
+{% block content %}
+    <div class="container">
+        <h1>Congratulations! Your Order is Confirmed</h1>
+        <p>Thank you for shopping with us.</p>
+        <p>Your order has been successfully placed.</p>
+        <h2>Order Details:</h2>
+        <ul>
+            {% for item in order_items %}
+            <li>{{ item.product.name }} - Quantity: {{ item.quantity }} - Price: {{ item.product.price }}</li>
+            {% endfor %}
+        </ul>
+        <p>Total Amount: {{ total_amount }}</p>
+        <p>Delivery Address: {{ delivery_address }}</p>
+        <!-- Add any other relevant details here -->
+    </div>
+{% endblock %}

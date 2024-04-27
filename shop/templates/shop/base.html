@@ -1,0 +1,450 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Acme Shopping </title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <style>
+    /* products_styles.css */
+
+body {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+nav{
+    
+}
+nav ul {
+        
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #f3f3f3;
+        justify-content:space-around;
+    }
+
+    nav li {
+        float: left;
+        justify-content: space-around;
+    }
+
+    nav li a {
+        display: block;
+        color: #333;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    nav li a:hover {
+        background-color: #ddd;
+    }
+h1 {
+    padding:100px 0 50px 0px;
+    color: black;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+}
+h2 {
+    padding: 100px 0 50px 0px;
+    color: black;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+}
+p {
+    font-family: poppins;
+    font-size: 18px;
+}
+a {
+    color: black;
+    font-size: 30px;
+    font-weight: 500;
+    text-decoration: none; 
+    padding-left: 80px;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    height: inherit;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+    margin-left: 250px;
+    margin-top: 100px;
+    border-radius: 20px;
+}
+   .row {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        column-gap: 30px;
+        row-gap: 30px;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+    }
+    .col {
+        padding: 0 15px;
+        box-sizing: border-box;
+        margin-bottom: 30px;
+    }
+    .card {
+        width: 100%;
+        height: inherit;
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+        cursor: pointer;
+        text-align: left;
+    }
+    .card-img-top {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    .card-body {
+        padding: 15px;
+    }
+    .card-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .card-price {
+        font-size: 16px;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+    .card-text {
+        font-size: 14px;
+        color: #555;
+    }
+
+
+.login-container {
+            width: 100%;
+            height: 110vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: grey;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        .login-container span {
+            display: block;
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #333;
+            margin-top: 30px;
+        }
+
+        .login-container a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+
+        .login-container form p {
+            margin-bottom: 15px;
+        }
+
+        .login-container form input[type="text"],
+        .login-container form input[type="password"],
+        .login-container form input[type="email"] {
+            width: calc(100% - 10px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        
+
+        .login-container form input[type="submit"] {
+            width: 30%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-container form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        small{
+            font-size: 10px;
+            font-weight: 100
+        }
+
+
+        /* Add the following CSS to your stylesheet */
+
+.cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.cart-items {
+    margin-bottom: 20px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table th,
+.cart-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.cart-table th {
+    font-weight: bold;
+}
+
+.cart-table .num {
+    text-align: right;
+}
+
+.cart-table img {
+    max-width: 80px;
+    height: auto;
+}
+
+.cart-buttons {
+    text-align: right;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.button.light {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.product-detail-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    display: flex;
+    border-radius: 10px;
+}
+
+.product-image {
+    flex: 1;
+    padding: 20px;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-info {
+    flex: 2;
+    padding: 20px;
+}
+
+.product-info h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.product-info .product-id {
+    color: #666;
+    font-size: 14px;
+}
+
+.product-info .product-price {
+    font-size: 20px;
+    color: #28a745;
+    margin: 10px 0;
+}
+
+.product-info .product-created-date {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.product-info .product-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.add-to-basket-form {
+    margin-top: 20px;
+}
+
+.add-to-basket-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.add-to-basket-form button:hover {
+    background-color: #0056b3;
+}
+
+.edit-product-link,
+.delete-product-link {
+    color: #dc3545;
+    text-decoration: none;
+}
+
+.edit-product-link:hover,
+.delete-product-link:hover {
+    text-decoration: underline;
+}
+
+.search-cover{
+    width: 50%;
+    height: 5vh;
+      display: flex;
+      align-items: center;
+}
+nav form {
+    width: 100%;
+    height: 5vh;
+      display: flex;
+      align-items: center;
+      margin: 20px 0px 0px 30px;
+    }
+
+    nav input[type="text"] {
+        width: 70%;
+        height:inherit;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      flex: 1;
+    }
+
+    nav button[type="submit"] {
+        height: 5vh;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    nav button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+</style>
+
+</head>
+<body>
+  {% if user.is_staff %}
+  <nav>
+    <ul>
+      <li><a href="{% url 'shop:product_list' %}">Home</a></li>
+      <li><a href="{% url 'shop:basket_detail' %}">Basket</a></li>
+      <li><a href="{% url 'shop:dashboard' %}">Dashboard</a></li>
+      <li><a href="{% url 'shop:customer_list' %}">Customer</a></li>
+      <li><a href="{% url 'shop:order_list' %}">Orders</a></li>
+      <li>
+        {% if user.is_authenticated %}
+          <a href="{% url 'shop:logout' %}">Log Out</a>
+        {% else %}
+          <a href="{% url 'shop:login' %}">Log In</a>
+        {% endif %}
+      </li>
+      <!-- Add search form here -->
+      <li class="search-cover">
+        <form action="{% url 'shop:product_list' %}" method="GET">
+          <input type="text" name="q" placeholder="Search products...">
+          <button type="submit">Search</button>
+        </form>
+      </li>
+    </ul>
+  </nav>
+  {% else %}
+<nav>
+    <ul>
+      <li><a href="{% url 'shop:product_list' %}">Home</a></li>
+      <li><a href="{% url 'shop:basket_detail' %}">Basket</a></li>
+      <li>
+        {% if user.is_authenticated %}
+          <a href="{% url 'shop:logout' %}">Log Out</a>
+        {% else %}
+          <a href="{% url 'shop:login' %}">Log In</a>
+        {% endif %}
+      </li>
+      <!-- Add search form here -->
+      <li class="search-cover">
+        <form action="{% url 'shop:product_list' %}" method="GET">
+          <input type="text" name="q" placeholder="Search products...">
+          <button type="submit">Search</button>
+        </form>
+      </li>
+    </ul>
+  </nav>
+    {% endif %}
+
+    {% block content %}
+    
+    {% endblock %}
+
+</body>
+</html>
