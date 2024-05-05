@@ -5,11 +5,11 @@ Solo project
 
   **Clone the repository:**
   ```bash
-  git clone https://github.com/JustTino/Solo-Project.git
+  git clone https://github.com/JustTino/Django_assignment.git
 
  **Navigate to the project directory:**
    ```
-   cd Solo-project
+   cd shopping_with_django-copy
    ```
 
    python manage.py makemigrations
@@ -25,15 +25,14 @@ Solo project
     ```
 ## Cloud Deployment
  **The cloud deployement link for the project is:**
-   https://solo-project-rho.vercel.app/
+    https://valentinetino.pythonanywhere.com/
  
 ## Admin Access
  **For Admin Access**
    ```
-   Username: adminn
+   Username: admin
    password: 12345
    ```
 ## Git repository
    
-https://github.com/JustTino/Solo-Project.git
-![image](https://github.com/JustTino/Solo-Project/assets/137895073/2dc22712-cf90-4460-b5b6-7ca73c2019ca)
+https://github.com/JustTino/Django_assignment.git
